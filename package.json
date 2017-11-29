@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon .\\index.js",
-    "start:lwa" : "nodemon .\\micro-services\\rt-log-writer\\logger.broker.js", 
-    "start:lw" : "nodemon .\\micro-services\\rt-log-writer\\index.js", 
+    "start:lwa": "nodemon .\\micro-services\\rt-log-writer\\logger.broker.js",
+    "start:lw": "nodemon .\\micro-services\\rt-log-writer\\index.js",
     "cluster": "nodemon .\\cluster.js",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "body-parser": "1.18.2",
+    "bunyan": "^1.8.12",
     "cors": "2.8.4",
     "express": "4.16.2",
     "lodash": "4.17.4",
