@@ -16,7 +16,7 @@ class LogFileWriter extends AbstractLogWriter {
         if (loggingEvent && loggingEvent.level) {
             switch (loggingEvent.level) {
                 case 3:
-                    this.logger.info(loggingEvent);
+                    this.logger.info('L',loggingEvent);
                     break;
                 default:
                     console.log('Unknown Logging Event');
