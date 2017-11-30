@@ -1,6 +1,6 @@
 const cfg = {
     port : 8000,
-    logPath : 'B://logs//bunyan.log',
+    logPath : '/Users/balwinderkatoch/bk/logs/bunyan.log',
     logFormat : ':date[iso] (:req[user]) :status :method :url :res[content-length] :response-time ms',
     loggerName : 'file',
     logWriter : {

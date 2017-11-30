@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
 import { LoggingEvent } from './model';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class LoggerService {
+  private maxBufferSize : number = 5000;
   private socket: SocketIOClient.Socket;
   private isConnected = false;
+  private logCache : LoggingEvent[] =[];
 
   constructor() {
-
+    Observable.timer(500,5000).subscribe(()=> {
+      if(this.logCache.length>0) {
+        this.socket.emit('RT_LOG_IN',{ type: 'LOG_EVENT', payload: this.logCache });
+        this.logCache= [];
+        console.log('Log sent to server');
+      }
+    });
   }
 
   start() {
@@ -20,7 +29,10 @@ export class LoggerService {
     });
   }
   sendLogEvent(loggingEvent: LoggingEvent) {
-    console.log(loggingEvent);
-    this.socket.emit('RT_LOG_IN',{ type: 'LOG_EVENT', payload: loggingEvent});
+    if(this.logCache.length > this.maxBufferSize) {
+      this.logCache.shift();
+      console.log('Log Entry Truncated');
+    }
+    this.logCache.push(loggingEvent);  
   }
 }

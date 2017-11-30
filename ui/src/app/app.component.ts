@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'Doctor FixIt';
   constructor(private loggerService: LoggerService) {
     loggerService.start();
-    Observable.timer(3000, 500).subscribe(()=> {
+    Observable.timer(200, 5).subscribe(()=> {
       loggerService.sendLogEvent(this.getLogEvent());
     });
   }

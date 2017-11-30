@@ -17,7 +17,9 @@ class SocketMessageHandler {
         if (payload && payload.type) {
             switch (payload.type) {
                 case Constants.MessageTypes.LOG_EVENT:
-                    this.logWriter.write(payload.payload);
+                    const logEvents = Array.isArray(payload.payload) ? payload.payload : [payload.payload];
+                    this.logWriter.write(logEvents);
+                    console.log(`Line written : ${logEvents.length}`);
                     break;
                 case Constants.MessageTypes.SET_USER:
                     this.socket.userId = payload.payload;
