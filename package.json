@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js",
+    "start" : "node ./micro-services/rt-logger/index.js",
     "start:lwa": "nodemon ./micro-services/rt-log-writer/logger.broker.js",
     "start:lw": "nodemon ./micro-services/rt-log-writer/index.js",
     "cluster": "nodemon ./cluster.js",
@@ -16,6 +16,7 @@
     "bunyan": "^1.8.12",
     "cors": "2.8.4",
     "express": "4.16.2",
+    "js-yaml": "^3.10.0",
     "lodash": "4.17.4",
     "morgan": "1.9.0",
     "nodemon": "1.12.1",

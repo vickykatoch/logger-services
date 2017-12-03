@@ -1,19 +1,11 @@
-
-const LogFileWriter = require('./file-log.writer');
-const config = require('../config/config');
-
+const bunyan = require('bunyan');
 
 class LoggerFactory {
 
-    getLogger(type, appName) {
-        return new LogFileWriter(appName,
-            {
-                type: 'rotating-file',
-                level: 'info',
-                period: '1d',   // daily rotation
-                count: 7,        // keep 3 back copies
-                path: config.logPath 
-            });
+    getLogger(moduleName,options) {
+        return bunyan.createLogger({
+            name: moduleName, streams: [ options ]
+        });
     }
 }
 

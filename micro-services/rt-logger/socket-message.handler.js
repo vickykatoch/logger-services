@@ -1,6 +1,6 @@
 const Constants = require('./message-types');
 const Rx = require('rxjs');
-const LoggerFactory = require('../../log-writers/logger-factory');
+const LoggerFactory = require('./writers/logger-factory');
 const config = require('../../config/config');
 
 

@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'Doctor FixIt';
   constructor(private loggerService: LoggerService, private http: HttpClient) {
-    // loggerService.start();
+    loggerService.start();
 
     http.get('/api/users/bk').retryWithTimeoutAndDelay(3, 500, 500).subscribe(x => {
       console.log(x);
@@ -27,9 +27,9 @@ export class AppComponent {
       
     })
 
-    // Observable.timer(200, 5).subscribe(() => {
-    //   loggerService.sendLogEvent(this.getLogEvent());
-    // });
+    Observable.timer(200, 5).subscribe(() => {
+      loggerService.sendLogEvent(this.getLogEvent());
+    });
 
   }
 

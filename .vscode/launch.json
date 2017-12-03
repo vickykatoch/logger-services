@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/micro-services/rt-log-writer/logger.broker.js",
+            "program": "${workspaceFolder}/micro-services/rt-logger/index.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
