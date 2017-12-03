@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
 import { LoggingEvent } from './model';
 import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class LoggerService {
@@ -10,14 +11,14 @@ export class LoggerService {
   private isConnected = false;
   private logCache : LoggingEvent[] =[];
 
-  constructor() {
-    Observable.timer(500,5000).subscribe(()=> {
-      if(this.logCache.length>0) {
-        this.socket.emit('RT_LOG_IN',{ type: 'LOG_EVENT', payload: this.logCache });
-        this.logCache= [];
-        console.log('Log sent to server');
-      }
-    });
+  constructor(private http: HttpClient) {
+    // Observable.timer(500,5000).subscribe(()=> {
+    //   if(this.logCache.length>0) {
+    //     this.socket.emit('RT_LOG_IN',{ type: 'LOG_EVENT', payload: this.logCache });
+    //     this.logCache= [];
+    //     console.log('Log sent to server');
+    //   }
+    // });
   }
 
   start() {
@@ -29,10 +30,16 @@ export class LoggerService {
     });
   }
   sendLogEvent(loggingEvent: LoggingEvent) {
-    if(this.logCache.length > this.maxBufferSize) {
-      this.logCache.shift();
-      console.log('Log Entry Truncated');
-    }
-    this.logCache.push(loggingEvent);  
+    this.http.post('http://localhost:12000/api/logEvnts',loggingEvent)
+        .subscribe((res)=> {
+          console.log(res);
+        },error=>{
+          console.error(error);
+        })
+    // if(this.logCache.length > this.maxBufferSize) {
+    //   this.logCache.shift();
+    //   console.log('Log Entry Truncated');
+    // }
+    // this.logCache.push(loggingEvent);  
   }
 }

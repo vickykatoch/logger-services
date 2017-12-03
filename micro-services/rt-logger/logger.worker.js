@@ -1,6 +1,7 @@
 const express = require('express');
+var bodyParser = require("body-parser");
 const Constants = require('./message-types');
-
+const cors = require('cors');
 
 console.info(`Started web server worker : ${process.pid}`);
 
@@ -18,6 +19,9 @@ process.on('message', (message) => {
 function onStartHttp(port) {
     console.info(`Starting http server on Worker : ${process.pid}, port : ${port}`);
     const app = express();
+    app.use(bodyParser.json());
+    app.use(cors());
+    app.use(require('./routes'));
     app.get('/', (req, res) => {
         res.send(`Hello World from : ${process.pid}`);
     });
