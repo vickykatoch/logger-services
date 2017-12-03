@@ -21,6 +21,11 @@ const handlerWorkerMessages = (worker, message) => {
             const serverConfig = appConfig.config[CONFIG_NAME];
             worker.send({ type: Constants.MessageTypes.START_HTTP_SERVER, payload: serverConfig.port });
             break;
+        case Constants.MessageTypes.LOG_EVENT:
+            const logEvents = Array.isArray(message.payload) ? message.payload : [message.payload];
+            serverlogger.info(`JTLog Message Count : ${logEvents.length}`);
+            jtLogger.info(JSON.stringify(logEvents));
+            break;
         default:
             serverlogger.warn(`Unknown message received by RTSERVER master from worker : ${worker.id}`, message);
     }

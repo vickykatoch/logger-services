@@ -5,7 +5,7 @@ RTLOGGERSERVER:
   jtLoggerOptions: 
     type: 'rotating-file'
     level: 'info'
-    period: '60000ms'
+    period: '600000ms'
     count: 7
     path: '/Users/balwinderkatoch/bk/logs/rt-log.log'
   serverLoggerOptions: 

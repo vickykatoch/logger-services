@@ -17,17 +17,17 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'Doctor FixIt';
   constructor(private loggerService: LoggerService, private http: HttpClient) {
-    loggerService.start();
+    // loggerService.start();
 
-    http.get('/api/users/bk').retryWithTimeoutAndDelay(3, 500, 500).subscribe(x => {
-      console.log(x);
-    }, error => {
-      console.log(error);
-    },()=> {
+    // http.get('/api/users/bk').retryWithTimeoutAndDelay(3, 500, 500).subscribe(x => {
+    //   console.log(x);
+    // }, error => {
+    //   console.log(error);
+    // },()=> {
       
-    })
+    // })
 
-    Observable.timer(200, 5).subscribe(() => {
+    Observable.timer(200, 50).subscribe(() => {
       loggerService.sendLogEvent(this.getLogEvent());
     });
 
