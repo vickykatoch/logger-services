@@ -1,0 +1,12 @@
+@import "variables";
+
+.primary-bar {
+    background: var(--primary-grad-color);
+    color : var(--inverse-fg-color);
+    border: 1px solid #000;
+}
+.secondary-bar {
+    background: var(--secondary-grad-color);
+    color : var(--primary-fg-color);
+    border: 1px solid #000;
+}

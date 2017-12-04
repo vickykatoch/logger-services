@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    background: var(--primary-bg-color);
+    color : var(--primary-fg-color);
+    font-size: var(--base-font-size);
+    line-height: 1.5rem;
+    font-family: var(--base-font-famiy);
+}

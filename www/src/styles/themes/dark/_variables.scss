@@ -1,0 +1,26 @@
+:root {
+    --primary-bg-color : #272B30;
+    --primary-fg-color : #fff;
+
+    --inverse-bg-color : #fff;
+    --inverse-fg-color : #272B30;
+
+
+    --primary-color : #3A3F44;
+    --secondary-color : #7A8288;
+    --success-color : #009933;
+    --info-color : #0070ff;
+    --warning-color : #f89406;
+    --danger-color : #c52929;
+
+    --primary-grad-color : linear-gradient(#484e55, #3A3F44 60%, #313539);
+    --secondary-grad-color : linear-gradient(#8a9196, #7A8288 60%, #70787d);
+    --success-grad-color : linear-gradient(#78cc78, #62c462 60%, #53be53);
+    --info-grad-color : linear-gradient(#0070ff, #0070ff 60%, #0070ff);
+    --warning-grad-color : linear-gradient(#faa123, #f89406 60%, #e48806);
+    --danger-grad-color : linear-gradient(#f17a77, #ee5f5b 60%, #ec4d49);
+
+    --base-font-size : 16px;
+    --base-line-height: 25px;
+    --base-font-famiy : 'Open Sans', sans-serif;
+}
