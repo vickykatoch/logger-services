@@ -2,11 +2,13 @@
 
 .primary-bar {
     background: var(--primary-grad-color);
+    color : var(--inverse-fg-color);
     border: 1px solid #000;
 }
 .secondary-bar {
     background: var(--secondary-grad-color);
-    border: 1px solid #000;
+    color : var(--primary-fg-color);
+    border: 1px solid var(--primary-color);
 }
 .success-bar {
     background: var(--sucess-grad-color);

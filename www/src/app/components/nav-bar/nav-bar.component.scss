@@ -1,0 +1,12 @@
+ul {
+    display: inline-block;
+    li {
+        display: inline-block;
+
+        a.menu-active {
+            color: #ee1c1b;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,13 +1,14 @@
 <div class="app-frame">
   <div class="header-bar primary-bar">
-    {{title}}
+    
+    <cp-nav-bar [title]="title"></cp-nav-bar>
   </div>
 
-  <div class="app-content" style="flex-direction:column">
+  <div class="app-content" >
     <!-- <button mat-fab>Click me!</button> -->
 
-    <!-- <router-outlet></router-outlet> -->
-    <p>
+    <router-outlet></router-outlet>
+     <!-- <p>
       To all our readers in the U.S., We will get straight to the point: This Monday we ask you to protect Wikipedia's independence.
       Time is running out in 2017 to help us. We depend on donations averaging about $15. Only a tiny portion of our readers
       give. If everyone reading this gave $3, we could keep Wikipedia thriving for years to come. The price of your Monday
@@ -36,7 +37,7 @@
       made if it had ads? Sure. But it wouldn’t be the same. We wouldn’t trust it. Most people ignore my messages. But I
       hope you’ll think about how useful it is to have unlimited access to reliable, neutral information. Please help keep
       Wikipedia online and growing. Thank you. — Jimmy Wales, Wikipedia Founder
-    </p>
+    </p>-->
     <div style="display:flex;text-align:right">
       <button style="background: var(--primary-grad-color);color:#fff;padding:10;height:30px">Primary</button>
       <button style="background: var(--secondary-grad-color);color:#fff;padding:10;height:30px">Secondary</button>
@@ -44,22 +45,10 @@
       <button style="background: var(--info-grad-color);color:#fff;padding:10;height:30px">Info</button>
       <button style="background: var(--warning-grad-color);color:#fff;padding:10;height:30px">Warning</button>
       <button style="background: var(--danger-grad-color);color:#fff;padding:10;height:30px">Danger</button>
-    </div>
+    </div> 
   </div>
 
 
-  <!-- <div style="background: var(--primary-30-color); height:30px;color: var(--green-30-color);">
-    hi
-  </div>
-  <div style="background: var(--primary-20-color); height:30px;color: var(--green-20-color)">
-    hello
-  </div>
-  <div style="background: var(--primary-10-color); height:30px;color: var(--green-10-color)">
-    world
-  </div>
-  <div style="background: var(--primary-grad-color); height:30px;color: var(--secondary-10-color)">
-    Gradient
-  </div> -->
 
-  <div class="footer-bar"></div>
+  <div class="footer-bar primary-bar"></div>
 </div>
