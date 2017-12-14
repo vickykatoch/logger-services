@@ -2,6 +2,7 @@ import { DashboardComponent } from "./modules/dashboard/index";
 import { Route } from "@angular/router";
 import { logRouterConfig } from "./modules/log-analyzer/log-router.config";
 import { helpRouterConfig } from "./modules/help/help-router.config";
+import { routes  } from "./modules/favorite-instruments/route.config";
 
 
 
@@ -21,6 +22,7 @@ export const routerConfig = [
     },
     ...logRouterConfig,
     ...helpRouterConfig,
+    ...routes,
     indexRoute,
     fallbackRoute
 ]
