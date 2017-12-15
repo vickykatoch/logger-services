@@ -1,3 +1,17 @@
-<div class="d-flex">
-        <favorite-instruments></favorite-instruments>
+<div class="d-flex mt-3 justify-content-center">
+    <div class="wrapper d-flex flex-column">
+        <div>
+            <h1>Header</h1>
+        </div>
+        <div style="flex-grow:1">
+            content
+        </div>
+        <div>
+            <favorite-instruments 
+                [favorites]="instruments" 
+                [activeItem]="activeFav"
+                (activeChanged)="onActiveFavoriteChanged($event)">
+            </favorite-instruments>
+        </div>
+    </div>
 </div>

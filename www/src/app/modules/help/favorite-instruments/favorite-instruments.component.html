@@ -1,1 +1,20 @@
-<h1>Favorites</h1>
+<div class="capsule-host">
+    <div class="left-nav" (click)="onLeft()">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+    </div>
+
+    <div class="capsule-group" #container>
+        <div class="capsule" *ngFor="let favorite of favorites" [ngClass]="{'active' : activeItem===favorite}">
+            <div (click)="activeChanged.next(favorite)">
+                {{favorite}}
+            </div>
+            <span>
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="right-nav">
+        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+    </div>
+</div>

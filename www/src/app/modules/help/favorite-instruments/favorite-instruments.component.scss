@@ -1,0 +1,75 @@
+:host {
+    overflow: hidden;
+    height: 35px;
+    // line-height: 35px;
+    // padding : 5px;
+    
+    .capsule-host {
+        overflow: hidden;
+        display: flex;
+        position: relative;
+
+        .navigation {
+            position: absolute;
+            background: #000000;
+            opacity: 0.2;
+            padding : 5px 2px;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+                color:#fff;
+            }
+        }
+
+        .left-nav {
+            @extend .navigation;
+            left: 2px;
+        }
+        .right-nav {
+            @extend .navigation;
+            right: 0;
+        }
+        .capsule-group {
+
+            flex-grow: 1;
+            padding : 5px;
+            display: -webkit-inline-box;
+            background: var(--primary-fg-color);
+            color: var(--primary-bg-color);
+            font-size : .8rem;
+
+            .active {
+                background: var(--secondary-color);
+                color : var(--inverse-bg-color);
+            }
+
+            .capsule {
+                display : flex;
+                cursor: pointer;
+                border : 1px solid var(--primary-bg-color);
+                box-sizing: border-box;
+                margin-right : 10px;
+
+                div {
+                    padding: 0 5px;
+                    border-right: 1px solid var(--primary-bg-color);
+                    &:hover {
+                        background: var(--secondary-color);
+                        color : var(--inverse-bg-color);
+                    }
+                }
+                span {
+                    padding: 0 2px;
+                    font-size: .9rem;
+                    
+
+                    &:hover {
+                        color : #fff;
+                        background: red;
+                    }
+                }
+                
+            }
+        }
+    }
+}

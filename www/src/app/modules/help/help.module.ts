@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from "@angular/router";
 import { AboutComponent } from './about/about.component';
-import { FavoriteInstrumentsComponent } from '../favorite-instruments/favorite-instruments.component';
+import { FavoriteInstrumentsComponent } from './favorite-instruments/favorite-instruments.component';
 
 const routerConfig = [
   {
@@ -17,6 +17,9 @@ const routerConfig = [
     CommonModule,
     RouterModule.forChild(routerConfig)
   ],
-  declarations: [AboutComponent,FavoriteInstrumentsComponent]
+  declarations: [
+    AboutComponent, 
+    FavoriteInstrumentsComponent
+  ]
 })
 export class HelpModule { }
