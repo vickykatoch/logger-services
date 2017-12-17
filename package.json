@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "node ./micro-services/rt-logger/index.js",
+    "start": "node ./micro-services/rt-logger/index.js",
     "start:lwa": "nodemon ./micro-services/rt-log-writer/logger.broker.js",
     "start:lw": "nodemon ./micro-services/rt-log-writer/index.js",
     "cluster": "nodemon ./cluster.js",
@@ -30,6 +30,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@angular/cli": "^1.5.5",
     "babel-cli": "6.26.0",
     "babel-preset-es2015": "6.24.1",
     "rimraf": "2.6.2"
