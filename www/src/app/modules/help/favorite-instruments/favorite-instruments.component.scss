@@ -10,7 +10,6 @@
         position: relative;
 
         .navigation {
-            position: absolute;
             background: #000000;
             opacity: 0.2;
             padding : 5px 2px;
@@ -23,20 +22,23 @@
 
         .left-nav {
             @extend .navigation;
-            left: 2px;
+            // left: 2px;
         }
         .right-nav {
             @extend .navigation;
-            right: 0;
+            // right: 0;
         }
         .capsule-group {
-
             flex-grow: 1;
-            padding : 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left : 5px;
+            padding-right: 25px;
             display: -webkit-inline-box;
             background: var(--primary-fg-color);
             color: var(--primary-bg-color);
             font-size : .8rem;
+            overflow: auto;
 
             .active {
                 background: var(--secondary-color);

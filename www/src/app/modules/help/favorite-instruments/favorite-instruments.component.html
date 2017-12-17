@@ -1,12 +1,12 @@
 <div class="capsule-host">
-    <div class="left-nav" (click)="onLeft()">
+    <div class="left-nav" (click)="onLeft()" *ngIf="isScollerVisible">
         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
     </div>
 
     <div class="capsule-group" #container>
-        <div class="capsule" *ngFor="let favorite of favorites" [ngClass]="{'active' : activeItem===favorite}">
-            <div (click)="activeChanged.next(favorite)">
-                {{favorite}}
+        <div class="capsule" [id]="favorite.id" *ngFor="let favorite of favorites" [ngClass]="{'active' : activeItem===favorite}">
+            <div (click)="activeChanged.next(favorite)" >
+                {{favorite.name}}
             </div>
             <span>
                 <i class="fa fa-times" aria-hidden="true"></i>
@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="right-nav">
+    <div class="right-nav" (click)="onRight()" *ngIf="isScollerVisible">
         <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
     </div>
 </div>
